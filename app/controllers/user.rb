@@ -36,5 +36,6 @@ post '/users/login' do
 end
 
 get '/users/logout' do
-
+  session[:user_id] = nil
 end
+

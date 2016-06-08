@@ -23,8 +23,16 @@
 <body>
 <div id="wrapper">
   <ul class="nav nav-pills">
-    <a href="/users/new">Sign-In</a>
-    <a href="/users/login">Login</a>
+
+    <form method = "POST" action = "/users/new">
+      <input type = "submit" value = "Sign-In"
+    </form>
+     <form method = "POST" action = "/users/login">
+      <input type="submit" value="Login">
+    </form>
+    <form method="GET" action="/users/logout">
+      <input type="submit" value="Logout">
+    </form>
 
     <li class="active"><a href="/posts">Question</a></li>
     <li class="active"><a href="">Jobs</a></li>
