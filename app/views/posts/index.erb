@@ -1,8 +1,8 @@
-<div id="container">
+
   <h1>Post Index</h1>
   <div id="post_form_all">
   <% @posts.each do |post| %>
-  <%= post.title %>
+  <a href="/posts/<%= post.id %>"><%= post.title %></a>
   <% end %>
   </div>
-</div>
+

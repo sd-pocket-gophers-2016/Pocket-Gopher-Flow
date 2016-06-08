@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
     #end
 
   # time since creation
-  #  def time_since_creation
-  #    (Time.now - created_at) / 3600
-  #  end
+   def time_since_creation
+     ((Time.now - created_at) / 3600).round
+   end
 end
