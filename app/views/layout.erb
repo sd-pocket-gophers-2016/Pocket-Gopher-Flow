@@ -21,18 +21,21 @@
   <title></title>
 </head>
 <body>
-<div id="wrapper">
+<div class="container">
+<nav>
   <ul class="nav nav-pills">
-    <a href="/users/new">Sign-In</a>
-    <a href="/users/login">Login</a>
-
-    <li class="active"><a href="/posts">Question</a></li>
-    <li class="active"><a href="">Jobs</a></li>
-    <li class="active"><a href="/posts">Tag</a></li>
-    <li class="active"><a href="/users/:id">User</a></li>
-    <li class="active"><a href="">Badges</a></li>
-    <li class="active"><a href="/posts/new">Ask Question</a></li>
+      <li class="active"><a href="/posts">Sign-Up</a></li>
+      <li class=""><a href="">Login</a></li>
   </ul>
+  <ul class="nav nav-pills">
+      <li><a href="/posts">Question</a></li>
+      <li class=""><a href="">Jobs</a></li>
+      <li class=""><a href="/posts">Tag</a></li>
+      <li class=""><a href="/users/:id">User</a></li>
+      <li class=""><a href="">Badges</a></li>
+      <li class=""><a href="/posts/new">Ask Question</a></li>
+  </ul>
+  </nav>
   <%= yield %>
 </div>
 </body>
