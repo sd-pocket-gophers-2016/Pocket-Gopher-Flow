@@ -3,11 +3,11 @@ class User < ActiveRecord::Base
   has_many :posts
 
   validates :username, :email, :password, presence: true
-  validates :email, uniqueness: true
+  validates :username, :email,  uniqueness: true
 
-  def self.authenticate(username, password)
-    user = User.find_by(username: username)
-    if user && user.password == password
+  def self.authenticate(email, password)
+    user = User.find_by(email: email)
+    if user && BCrypt::Password.new(user.password_digest) == password
       return user
     else
       nil

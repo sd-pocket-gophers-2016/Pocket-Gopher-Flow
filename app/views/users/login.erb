@@ -1,22 +1,29 @@
 <div class="container">
   <h1>Login!</h1>
-    <p>
-      <form id="login" action="/user/login" method="post">
 
-        <label for "username"> Username: </label>
-        <input type="text" name="user[username]" value=<%=@user.username%> > <br>
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  <% end %>
 
-        <label for "password"> Password: </label>
-        <input type="password" name="password" value=<%=@password%>><br>
+  <p>
+    <form id="login" action="/users/login" method="post">
 
-        <input type="submit" value="Login">
-      </form>
-    </p>
+      <label for "email"> Email: </label>
+      <input type="text" name="user[email]"><br>
+
+      <label for "password"> Password: </label>
+      <input type="password" name="user[password]"><br>
+
+      <input type="submit" value="Login">
+    </form>
+  </p>
 <br>
 <br>
 <p>
   Not registered with us yet?<br>
-  <form action="/user/new" method="get">
+  <form action="/users/new" method="get">
     <input type="submit" value="Sign Up Here">
   </form>
 </p>
