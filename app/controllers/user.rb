@@ -1,6 +1,6 @@
 get '/users' do
   @user = User.all
-  erb :'index'
+  erb :'/users/index'
 end
 
 get '/users/new' do
@@ -37,5 +37,10 @@ end
 
 get '/users/logout' do
   session[:user_id] = nil
+  redirect '/users/login'
 end
 
+get '/users/:id' do
+  @user = User.find(params[:id])
+  erb :'users/show'
+end
