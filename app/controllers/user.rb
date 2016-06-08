@@ -24,15 +24,7 @@ get '/users/login' do
 end
 
 post '/users/login' do
-  # @user = User.new
   @user = User.authenticate(params[:user][:email], params[:user][:password])
-  puts params
-  puts "user"
-  puts params[:user]
-  puts "email"
-  puts "#{params[:user][:email]}"
-  puts "password"
-  puts "#{params[:user][:password]}"
 
   if @user
     session[:user_id] = @user.id
@@ -41,4 +33,8 @@ post '/users/login' do
     @errors = ['hi']
     erb :'/users/login'
   end
+end
+
+get '/users/logout' do
+
 end
