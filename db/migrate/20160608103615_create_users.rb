@@ -4,7 +4,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string   :username, null: false
       t.string   :email, null: false
       t.string   :password_digest, null: false
-      t.integer  :post_id
       t.timestamps( null:false )
       end
   end
