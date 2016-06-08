@@ -5,5 +5,15 @@ end
 
 post '/user' do
   @user = User.create(params[:user])
-  redirect '/user/new'
+  if @user.valid?
+    redirect '/user/new'
+  else
+    status 422
+    @errors = @user.errors.full_messages
+    erb :'users/new'
+  end
+end
+
+get '/user/login' do
+  erb :'user/login'
 end

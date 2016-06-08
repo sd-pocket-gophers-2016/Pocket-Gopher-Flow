@@ -1,6 +1,12 @@
 <div class="container">
   <h1>Register with our website!</h1>
 
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  <% end %>
+
   <form id="new_user" action="/user" method="post">
 
   <label for "username" >Username: </label>

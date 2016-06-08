@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Login!</h1>
+    <p>
+      <form id="login" action="/user/login" method="post">
+
+        <label for "username"> Username: </label>
+        <input type="text" name="user[username]" value=<%=@user.username%> > <br>
+
+        <label for "password"> Password: </label>
+        <input type="password" name="password" value=<%=@password%>><br>
+
+        <input type="submit" value="Login">
+      </form>
+    </p>
+<br>
+<br>
+<p>
+  Not registered with us yet?<br>
+  <form action="/user/new" method="get">
+    <input type="submit" value="Sign Up Here">
+  </form>
+</p>
+</div>
