@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :title, :content
       t.integer :views
       #t.integer :comment_id
-
+      t.integer :user_id
       t.timestamps null: false
     end
   end
