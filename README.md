@@ -1,2 +1,8 @@
 # Pocket-Gopher-Flow
-Overflowing with Stacks
+* DBC-SD Pocket Gophers - Week 5 - Team 1
+* Team Name: Team Mamaways
+* Team Members
+  * Jaq
+  * Jesse
+  * Kat
+  * Daniel
