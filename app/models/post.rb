@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   # Remember to create a migration!
-  validates :title, :content,  presence => true
+  validates :title, :content, presence: true
   belongs_to :user
 
   #votes for later
