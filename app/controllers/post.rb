@@ -30,9 +30,9 @@ get '/posts/:id' do
 end
 
 post '/answers/new' do
-  answer = Answer.create(params[:id], user_id: session[:id], )
-  if request.xhr?
-    content_type :json
-    {user_id: , post_id: , content: answer, }
+  # answer = Answer.create(params[:id], user_id: session[:id], )
+  # if request.xhr?
+  #   content_type :json
+  #   {user_id: , post_id: , content: answer, }
 end
 
