@@ -12,6 +12,7 @@
 </div>
 
 <div>
-  <%= erb :'answers/_new' %>
+
+  <%= erb :'answers/_new', locals: { action: "/posts/#{@post.id}/answers" }%>
 </div>
 

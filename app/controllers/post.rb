@@ -31,7 +31,7 @@ get '/posts/:id' do
   erb :'/posts/show'
 end
 
-post '/answers/new' do
+post '/posts/:id/answers/new' do
 
   # @post = Post.find(params[:id])
   # @post_id = @post.id

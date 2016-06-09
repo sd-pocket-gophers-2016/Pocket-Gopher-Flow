@@ -4,12 +4,12 @@ $(document).ready(function() {
 ////////////////////////////////////////////////////////////////////////
   $('#new_comment').hide();
 
-  $('form').on('click', 'input', (function(event){
+  // $('form').on('click', 'input', (function(event){
 
-    event.preventDefault();
-    console.log(event);
+  //   event.preventDefault();
+  //   console.log(event);
 
-  }));
+  // }));
 
   // $('.post-container').on('submit','#new_comment', function(){
 
