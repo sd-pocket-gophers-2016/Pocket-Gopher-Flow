@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   $('#new_comment').hide();
     $('input[value="Add a Comment"]').on('click',(function(event){
       event.preventDefault();
@@ -6,5 +7,12 @@ $(document).ready(function() {
       $(this).hide();
   }));
 
-//
+  $('input[value="Add Answer"]').on("click", function(e){
+    e.preventDefault();
+    var answer = $("#answer").val();
+    var url = $(this).closest('form').attr('action');
+    var ajaxRequest = $.post(url, $(this).serialize());
+    console.log(ajaxRequest);
+  });
+
 });
