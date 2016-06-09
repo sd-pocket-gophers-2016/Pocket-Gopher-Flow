@@ -1,8 +1,8 @@
 post '/posts/:id/comments' do
 	post = Post.find(params[:id])
-	post.comments.create(content: params[:content], user_id: sessions[:id], commentable_id: post.id, commentable_type: post)
+	post.comments.create(content: params[:content], user_id: current_user.id, commentable_id: post.id, commentable_type: post)
 
-	redirect '/posts/:id'
+	redirect '/posts/1'
 	# if request.xhr?
 	# 	# {content: params[:content], user_id: sessions[:id], commentable_id: post.id, commentable_type: post  }.to_json
 	# else
