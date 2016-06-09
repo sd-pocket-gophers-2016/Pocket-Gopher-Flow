@@ -1,7 +1,7 @@
 post '/posts/:id/comments' do
 	post = Post.find(params[:id])
 	comment = post.comments.create(content: params[:content], user: current_user, commentable: post)
-
+	puts comment.to_json
 	if request.xhr?
 		content_type :json
 		# {content: params[:content], user_id: current_user.id, commentable_id: post.id, commentable_type: post  }.to_json

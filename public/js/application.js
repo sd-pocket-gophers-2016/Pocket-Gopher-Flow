@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 ////////////////////////////////////////////////////////////////////////
-////////////////////////////Add Comment//////////////////////////////////
+////////////////////////////Add Comment/////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 
   $('#new_comment').hide();
@@ -11,10 +11,12 @@ $(document).ready(function() {
       $(this).hide();
   }));
 
-  $('.post-container').on('submit','#new_comment', function(){
+  $('.post-container').on('submit','#new_comment', function(e){
+    e.preventDefault();
     $.ajax({
       url: $(this).attr('action'),
-      method: $(this).attr('method')
+      method: $(this).attr('method'),
+      data: $(this).serialize()
     })
     .done(function(response){
       alert('florb');
