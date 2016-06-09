@@ -1,16 +1,17 @@
-  <form method="post" action="/users">
+  <form method="post" action="/posts/new">
     <div class="form-group">
       <label for="title">Title:</label>
-      <input class="form-control" id="post_title" name="post[title]" type="text">
+      <input class="form-control" id="post_title" name="title" type="text">
     </div>
     <div class="form-group">
       <label for="question">Question:</label>
-      <input class="form-control question-group" id="question" name="post[content]" type="text">
+      <input class="form-control question-group" id="question" name="content" type="text">
     </div>
-    <div class="form-group">
+<!--     <div class="form-group">
+      <input type="hidden" name="post[:user_id]" value="">
       <label for="tags">Tags:</label>
-<!--       <input class="form-control" id="tags" name="post[tags]" type="text"> -->
-    </div>
+      <input class="form-control" id="tags" name="post[tags]" type="text">
+    </div> -->
     <div class="form-group">
       <br>
       <input type="submit" value="Add Post" class="btn btn-primary btn-default pull-right">
