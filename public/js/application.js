@@ -11,20 +11,17 @@ $(document).ready(function() {
       $(this).hide();
   }));
 
-  // $('.post-container').on('submit','#new_comment', function(){
-
-  //   $.ajax({
-  //     url: $(this).attr('action'),
-  //     method: $(this).attr('method')
-  //   })
-  //   .done(function(response){
-  //     var obj = JSON.parse(response)
-
-      
-  //   })
-    
-
-  // });
+  $('.post-container').on('submit','#new_comment', function(){
+    $.ajax({
+      url: $(this).attr('action'),
+      method: $(this).attr('method')
+    })
+    .done(function(response){
+      alert('florb');
+    }).fail(function(){
+      alert('fail');
+    });
+  });
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////Add Answer//////////////////////////////////
