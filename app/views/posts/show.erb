@@ -7,10 +7,11 @@
     <p>Posted <%= @post.time_since_creation%> hours ago</p>
 
     <input id='new-comment' type='submit' value='Add a Comment'>
-    <%= erb :'/comments/_new'%>
+    <%= erb :'/comments/_new', locals: { action: "/posts/#{@post.id}/comments" } %>
 
 </div>
 
 <div>
   <%= erb :'answers/_new' %>
 </div>
+

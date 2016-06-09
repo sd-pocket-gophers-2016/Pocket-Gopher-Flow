@@ -1,7 +1,7 @@
 $(document).ready(function() {
-
-
-////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////Add Comment//////////////////////////////////
+////////////////////////////////////////////////////////////////////////
   $('#new_comment').hide();
 
   $('form').on('click', 'input', (function(event){
@@ -11,19 +11,38 @@ $(document).ready(function() {
 
   }));
 
+  // $('.post-container').on('submit','#new_comment', function(){
 
+  //   $.ajax({
+  //     url: $(this).attr('action'),
+  //     method: $(this).attr('method')
+  //   })
+  //   .done(function(response){
+  //     var obj = JSON.parse(response)
+
+
+  //   })
+
+
+  // });
   //   $('input[value="Add a Comment"]').on('click',(function(event){
   //     event.preventDefault();
   //     $('#new_comment').show();
   //     $(this).hide();
   // }));
 
-  // $('input[value="Add Answer"]').on("click", function(e){
-  //   e.preventDefault();
-  //   var answer = $("#answer").val();
-  //   var url = $(this).closest('form').attr('action');
-  //   var ajaxRequest = $.post(url, $(this).serialize());
-  //   console.log(ajaxRequest);
-  // });
-///////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////Add Answer//////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+
+
+  $('input[value="Add Answer"]').on("click", function(e){
+    e.preventDefault();
+    var answer = $("#answer").val();
+    var url = $(this).closest('form').attr('action');
+    var ajaxRequest = $.post(url, $(this).serialize());
+    console.log(ajaxRequest);
+  });
+
+
 });

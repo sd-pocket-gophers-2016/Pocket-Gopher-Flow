@@ -32,6 +32,7 @@ get '/posts/:id' do
 end
 
 post '/answers/new' do
+
   # @post = Post.find(params[:id])
   # @post_id = @post.id
   #needs comment, user_id, post_id
@@ -40,5 +41,11 @@ post '/answers/new' do
   #   content_type :json
   #   {user_id: , post_id: , content: answer, }
   redirect '/posts/:id'
+
+  # answer = Answer.create(params[:id], user_id: session[:id], )
+  # if request.xhr?
+  #   content_type :json
+  #   {user_id: , post_id: , content: answer, }
+
 end
 
