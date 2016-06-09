@@ -1,29 +1,22 @@
 $(document).ready(function() {
 ////////////////////////////////////////////////////////////////////////
-////////////////////////////Add Comment//////////////////////////////////
+////////////////////////////Add Comment/////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
   $('#new_comment').hide();
 
-
-  // $('.post-container').on('submit','#new_comment', function(){
-
-  //   $.ajax({
-  //     url: $(this).attr('action'),
-  //     method: $(this).attr('method')
-  //   })
-  //   .done(function(response){
-  //     var obj = JSON.parse(response)
-
-
-  //   })
-
-
-  // });
-  //   $('input[value="Add a Comment"]').on('click',(function(event){
-  //     event.preventDefault();
-  //     $('#new_comment').show();
-  //     $(this).hide();
-  // }));
+  $('.post-container').on('submit','#new_comment', function(e){
+    e.preventDefault();
+    $.ajax({
+      url: $(this).attr('action'),
+      method: $(this).attr('method'),
+      data: $(this).serialize()
+    })
+    .done(function(response){
+      alert('florb');
+    }).fail(function(){
+      alert('fail');
+    });
+  });
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////Add Answer//////////////////////////////////
