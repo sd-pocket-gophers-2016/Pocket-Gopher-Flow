@@ -25,7 +25,7 @@ get '/posts/:id' do
   @post = Post.find(params[:id])
   @user = User.find(@post.user_id)
   @post_id = @post.id
-  @user_id = session[:user_id]
+  @user_id = current_user.id
   erb :'/posts/show'
 end
 
