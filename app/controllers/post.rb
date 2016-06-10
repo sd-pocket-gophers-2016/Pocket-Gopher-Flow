@@ -30,10 +30,9 @@ get '/posts/:id' do
 end
 
 post '/posts/:id/answers' do
-  post = Post.find(params[:id])
-
-  answer = Answer.create(content: params[:content], user_id: current_user.id, post_id: post.id)
-  puts answer.to_json
+  @post = Post.find(params[:id])
+  Answer.create(content: params[:content], user_id: current_user.id, post_id: @post.id)
+   answer.to_json
   if request.xhr?
     content_type :json
     answer.to_json

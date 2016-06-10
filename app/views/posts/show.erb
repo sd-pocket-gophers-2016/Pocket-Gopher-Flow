@@ -12,7 +12,7 @@
 
     <div id='all-post-comments'>
     	
-    		<p>
+    		<p class="idontknow">
     		<%@post.comments.last(5).each do |comment|%>
     		<div id='post-comment'> <%=comment.content%></div>
     		<% end %>
@@ -31,6 +31,7 @@
 
   <div id='answers'>
     <div id='all-answer-comments'>
+    	
     </div>
    <div id='answer-comment-button'>
    </div>
