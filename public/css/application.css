@@ -38,7 +38,10 @@ body{
   color: #DCE4DE;
 }
 
-
+.col-md-6 < a {
+  width: 80%;
+  display: block;
+}
 
 /*************** MEDIA QUERIES *******************/
 
