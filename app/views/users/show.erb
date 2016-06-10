@@ -1,3 +1,19 @@
-<h1> All about <%=@user.username %> </h1>
+<h1> <%=@user.username %>'s activity on Pocket Gopher Flow </h1><br>
+<h3>User Posts</h3>
+<% if @user.posts.count > 0 %>
+  <% @user.posts.each do |post| %>
+    <div><a href= "/posts/<%=post.id%>"><%=post.title %></a></div>
+  <% end %>
+<% else %>
+  <div><%= @user.username %> is lurking</div>
+<% end %>
 
-<p> "something generic for now, we will fix this later." </p>
+<h3>User comments</h3>
+<% if @user.comments.count > 0 %>
+  <% @user.comments.each do |comment| %>
+    <div><%= comment.content %></div>
+  <% end  %>
+  <% else %>
+    <div><%= @user.username %> is still thinking about what to comment on</div>
+<% end %>
+

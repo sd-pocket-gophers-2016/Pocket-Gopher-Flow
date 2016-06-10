@@ -2,7 +2,7 @@
   <h1>Post Index</h1>
   <div id="row featurette">
   <% @posts.each do |post| %>
-  <div><a href="/posts/<%= post.id %>"><%= post.title %></a></div>
+  <div><span class="post_title"><a href="/posts/<%= post.id %>"><%= post.title %></span><br></a> Posted by <%= post.user.username %></div><br>
   <% end %>
   </div>
 
