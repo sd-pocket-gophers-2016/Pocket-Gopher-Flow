@@ -3,18 +3,35 @@
 
   <div class='post-container'>
 
+  	<div id='post'>
     <p><%=@post.content%><p>
     <p>Posted by <%= @user.username %></p>
     <p>Posted <%= @post.time_since_creation%> hours ago</p>
+    </div>
 
+    <div id='all-post-comments'>
+    </div>
+    
+    <div id='post-comment-button'>
     <input id='new-comment' type='submit' value='Add a Comment'>
     <%= erb :'/comments/_new', locals: { action: "/posts/#{@post.id}/comments" } %>
-
+    </div>
+  
   </div>
+
+  <div class='answer-container'>
+	<div id="answer">
+	  <%= erb :'answers/_new', locals: { action: "/posts/#{@post.id}/answers" }%>
+	</div>
+	
+	<div id='all-answer-comments'>
+	</div>
+
+	<div id='answer-comment-button'>
+	</div>
+
 </div>
 
-<div id="answer">
-  <%= erb :'answers/_new', locals: { action: "/posts/#{@post.id}/answers" }%>
 </div>
 
 
