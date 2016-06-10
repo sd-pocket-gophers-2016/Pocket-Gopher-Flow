@@ -1,23 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <!--
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
   <script src="/js/application.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title></title>
 </head>
 <body>
-  <%= yield %>
+
+  <div class="jumbotron">
+  <div class="float"> <img class="picture" src="../pgopherfix.png" alt="pocket-gopherflow"></div>
+        <% if logged_in? %>
+          <form method="GET" action="/users/logout">
+          <input class="top-users" type="submit" value="Logout">
+          </form>
+        <% else %>
+          <form method = "GET" action = "/users/new">
+            <input class="top-users" type = "submit" value = "Sign-Up">
+          </form>
+           <form method = "GET" action = "/users/login">
+            <input class="top-users btn-primary" type="submit" value="Login">
+          </form>
+        <% end %>
+  </div>
+  <div class="container">
+
+  <nav class="navbar navbar-default">
+  <div class="collapse navbar-collapse" id="navbar-collapse-3">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="active"><a href="/posts">Question</a></li>
+      <li class="active"><a href="/jobs">Jobs</a></li>
+      <li class="active"><a href="/tags">Tag</a></li>
+      <li class="active"><a href="/users">Users</a></li>
+      <li class="active"><a href="/badges">Badges</a></li>
+      <li class="active"><a href="/posts/new">Ask Question</a></li>
+    </ul>
+  </div>
+  </nav>
+
+    <%= yield %>
+</div>
+<script>
+    $('#myStateButton').on('click', function () {
+    $(this).button('complete') // button text will be "finished!"
+  })
+</script>
 </body>
 </html>
+
+<!-- nav nav-pills -->
+
+

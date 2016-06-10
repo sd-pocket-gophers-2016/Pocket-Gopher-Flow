@@ -1,0 +1,54 @@
+<div id="bigcontainer">
+
+  <h1><a href="/posts/<%= @post.id %>"><%= @post.title %></a></h1>
+
+  <div class='post-container'>
+
+  	<div id='post'>
+    	<p><%=@post.content%><p>
+    	<p>Posted by <%= @user.username %></p>
+    	<p>Posted <%= @post.time_since_creation%> hours ago</p>
+    </div>
+
+    <div id='all-post-comments'>
+    	<h2> Comments </h2> 
+    		<p>
+    		<%@post.comments.last(5).each do |comment|%>
+    		<div id='post-comment'> <%=comment.content%></div>
+    		<% end %>
+    		</p>
+    
+    </div>
+
+    <div id='post-comment-button'>
+    	<input id='new-comment' type='submit' value='Add a Comment'>
+    	<%= erb :'/comments/_new', locals: { action: "/posts/#{@post.id}/comments" } %>
+    </div>
+
+  </div>
+
+  <div class='answer-container'>
+
+  <div id='answers'>
+    <h2> Answers </h2>
+    <p>
+      <%@post.answers.last(5).each do |answers|%>
+      <div id='post-answers'> <%=answers.content%></div>
+      <% end %>
+    </p>
+    
+    <div id='all-answer-comments'>
+
+    </div>
+
+    <div id='answer-comment-button'>
+
+    </div>
+
+  </div>
+
+   <div id="answer_form">
+     <%= erb :'answers/_new', locals: { action: "/posts/#{@post.id}/answers" }%>
+   </div>
+  </div>
+</div>
