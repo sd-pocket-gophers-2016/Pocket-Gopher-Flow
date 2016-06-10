@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 
-  
+
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////Add Comment/////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -27,11 +27,13 @@ $(document).ready(function() {
     .done(function(response){
       $('#all-post-comments div').remove();
       $.each(response, function(i, comment) {
-        $('#all-post-comments').append("<div id ='post-comment'>" + comment.content + "</div>"); 
+        $('#all-post-comments').append("<div id ='post-comment'>" + comment.content + "</div>");
       });
 
       $('#new_comment')[0].reset();
-    });  
+
+    });
+
   });
 
 ////////////////////////////////////////////////////////////////////////
