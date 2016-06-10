@@ -10,11 +10,13 @@
     </div>
 
     <div id='all-post-comments'>
-    	<p>
-    	<%@post.comments.last(5).each do |comment|%>
-    	<div id='post-comment'> <%=comment.content%></div>
-    	<% end %>
-    	</p>
+    	
+    		<p>
+    		<%@post.comments.last(5).each do |comment|%>
+    		<div id='post-comment'> <%=comment.content%></div>
+    		<% end %>
+    		</p>
+    
     </div>
     
     <div id='post-comment-button'>

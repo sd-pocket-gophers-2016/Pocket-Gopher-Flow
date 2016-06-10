@@ -11,17 +11,20 @@ $(document).ready(function() {
 
   $('.post-container').on('submit','#new_comment', function(e){
     e.preventDefault();
+
+    // var new_comment = $('#new_comm');
+
     $.ajax({
       url: $(this).attr('action'),
       method: $(this).attr('method'),
       data: $(this).serialize()
     })
+
     .done(function(response){
-      $('#all-post-comments').append(response.content);
-      // $('#all-post-comments')[0].reset();
-    }).fail(function(){
-      alert('fail');
-    });
+      $('#all-post-comments').append("<div id='post-comment'>" + response.content + " </div>");
+      $('#new_comment')[0].reset();
+    });  
+
   });
 
 ////////////////////////////////////////////////////////////////////////
