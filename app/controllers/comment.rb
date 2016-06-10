@@ -1,9 +1,10 @@
 post '/posts/:id/comments' do
 	@post = Post.find(params[:id])
 	comment = @post.comments.create(content: params[:content], user: current_user, commentable: @post)
+	comments = @post.comments.to_a[-5..-1]
 	if request.xhr?
 		content_type :json
-		comment.to_json
+		comments.to_json
 	else
 		redirect "/posts/#{params[:id]}"
 	end

@@ -1,4 +1,8 @@
+// var post_comments = @post.comments
+
 $(document).ready(function() {
+
+  
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////Add Comment/////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -21,7 +25,10 @@ $(document).ready(function() {
     })
 
     .done(function(response){
-      $('#all-post-comments').append("<div id='post-comment'>" + response.content + " </div>");
+      $.each(response, function(i, comment) {
+        $('#all-post-comments').append("<div id ='post-comment'>" + comment.content + "</div>"); 
+      });
+      // $('#all-post-comments').append("<div id='post-comment'>" + response.content + " </div>");
       $('#new_comment')[0].reset();
     });  
 
