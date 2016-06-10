@@ -1,5 +1,13 @@
+body{
+  letter-spacing: .04em;
+}
 .question-group {
   height: 500px;
+}
+
+.container-fluid {
+  width: 70%;
+  margin: 0 auto;
 }
 
 .jumbotron {
@@ -23,6 +31,13 @@
   padding: 15px 3em 10px 0px;
   background-color: #2B2D2E;
 }
+
+.top-users {
+  background: none;
+  border: none;
+  color: #DCE4DE;
+}
+
 
 
 /*************** MEDIA QUERIES *******************/

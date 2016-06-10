@@ -1,6 +1,6 @@
 
   <h1>Post Index</h1>
-  <div id="post_form_all">
+  <div id="row featurette">
   <% @posts.each do |post| %>
   <div><a href="/posts/<%= post.id %>"><%= post.title %></a></div>
   <% end %>

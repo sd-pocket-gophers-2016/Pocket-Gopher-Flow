@@ -22,37 +22,37 @@
   <title></title>
 </head>
 <body>
-<div class="jumbotron">
-      <% if logged_in? %>
-      <form class="top-users" method="GET" action="/users/logout">
-      <input type="submit" value="Logout">
-      </form>
-   <% else %>
-      <form class="top-users" method = "GET" action = "/users/new">
-        <input type = "submit" value = "Sign-Up">
-      </form>
-       <form class="top-users" method = "GET" action = "/users/login">
-        <input class="active" type="submit" value="Login">
-      </form>
-    <% end %>
 
-</div>
-<div class="container">
+  <div class="jumbotron">
+        <% if logged_in? %>
+          <form method="GET" action="/users/logout">
+          <input class="top-users" type="submit" value="Logout">
+          </form>
+        <% else %>
+          <form method = "GET" action = "/users/new">
+            <input class="top-users" type = "submit" value = "Sign-Up">
+          </form>
+           <form method = "GET" action = "/users/login">
+            <input class="top-users" type="submit" value="Login">
+          </form>
+        <% end %>
+  </div>
+  <div class="container-fluid">
 
-<nav>
-  <ul class="nav nav-pills">
+  <nav>
+    <ul class="nav nav-pills">
 
 
 
-    <li class="active"><a href="/posts">Question</a></li>
-    <li class="active"><a href="">Jobs</a></li>
-    <li class="active"><a href="/posts">Tag</a></li>
-    <li class="active"><a href="/users/:id">User</a></li>
-    <li class="active"><a href="">Badges</a></li>
-    <li class="active"><a href="/posts/new">Ask Question</a></li>
-  </ul>
-  </nav>
-  <%= yield %>
+      <li class="active"><a href="/posts">Question</a></li>
+      <li class="active"><a href="">Jobs</a></li>
+      <li class="active"><a href="/posts">Tag</a></li>
+      <li class="active"><a href="/users/:id">User</a></li>
+      <li class="active"><a href="">Badges</a></li>
+      <li class="active"><a href="/posts/new">Ask Question</a></li>
+    </ul>
+    </nav>
+    <%= yield %>
 </div>
 </body>
 </html>
