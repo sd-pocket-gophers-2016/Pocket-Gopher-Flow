@@ -30,13 +30,12 @@ get '/posts/:id' do
 end
 
 post '/posts/:id/answers' do
-  post = Post.find(params[:id])
-
-  answer = Answer.create(content: params[:content], user_id: current_user.id, post_id: post.id)
-  puts answer.to_json
+  @post = Post.find(params[:id])
+  answer = @post.answers.create(content: params[:content], user_id: current_user.id, post_id: @post.id)
+  answers = @post.answers.to_a[-5..-1]
   if request.xhr?
     content_type :json
-    answer.to_json
+    answers.to_json
   else
     redirect "/posts/#{params[:id]}"
   end
