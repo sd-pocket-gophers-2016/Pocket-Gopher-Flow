@@ -17,26 +17,32 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
   <script src="/js/application.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title></title>
 </head>
 <body>
-<div class="container">
-<nav>
-  <ul class="nav nav-pills">
-
-    <% if logged_in? %>
-      <form method="GET" action="/users/logout">
+<div class="jumbotron">
+      <% if logged_in? %>
+      <form class="top-users" method="GET" action="/users/logout">
       <input type="submit" value="Logout">
       </form>
    <% else %>
-      <form method = "GET" action = "/users/new">
+      <form class="top-users" method = "GET" action = "/users/new">
         <input type = "submit" value = "Sign-Up">
       </form>
-       <form method = "GET" action = "/users/login">
+       <form class="top-users" method = "GET" action = "/users/login">
         <input class="active" type="submit" value="Login">
       </form>
     <% end %>
+
+</div>
+<div class="container">
+
+<nav>
+  <ul class="nav nav-pills">
+
+
 
     <li class="active"><a href="/posts">Question</a></li>
     <li class="active"><a href="">Jobs</a></li>
