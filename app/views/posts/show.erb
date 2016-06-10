@@ -11,8 +11,8 @@
     </div>
 
     <div id='all-post-comments'>
-    	
-    		<p class="idontknow">
+    	<h2> Comments </h2> 
+    		<p>
     		<%@post.comments.last(5).each do |comment|%>
     		<div id='post-comment'> <%=comment.content%></div>
     		<% end %>
@@ -30,11 +30,21 @@
   <div class='answer-container'>
 
   <div id='answers'>
+    <h2> Answers </h2>
+    <p>
+      <%@post.answers.last(5).each do |answers|%>
+      <div id='post-answers'> <%=answers.content%></div>
+      <% end %>
+    </p>
+    
     <div id='all-answer-comments'>
-    	
+
     </div>
-   <div id='answer-comment-button'>
-   </div>
+
+    <div id='answer-comment-button'>
+
+    </div>
+
   </div>
 
    <div id="answer_form">

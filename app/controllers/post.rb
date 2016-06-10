@@ -31,11 +31,11 @@ end
 
 post '/posts/:id/answers' do
   @post = Post.find(params[:id])
-  Answer.create(content: params[:content], user_id: current_user.id, post_id: @post.id)
-   answer.to_json
+  answer = @post.answers.create(content: params[:content], user_id: current_user.id, post_id: @post.id)
+  answers = @post.answers.to_a[-5..-1]
   if request.xhr?
     content_type :json
-    answer.to_json
+    answers.to_json
   else
     redirect "/posts/#{params[:id]}"
   end

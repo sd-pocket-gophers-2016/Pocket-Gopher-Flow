@@ -25,18 +25,13 @@ $(document).ready(function() {
     })
 
     .done(function(response){
+      $('#all-post-comments div').remove();
       $.each(response, function(i, comment) {
         $('#all-post-comments').append("<div id ='post-comment'>" + comment.content + "</div>"); 
       });
 
       $('#new_comment')[0].reset();
-      $('#post-comment:first-of-type').remove();
-      $('#post-comment:first-of-type').remove();
-      $('#post-comment:first-of-type').remove();
-      $('#post-comment:first-of-type').remove();
-      $('#post-comment:first-of-type').remove();
     });  
-
   });
 
 ////////////////////////////////////////////////////////////////////////
@@ -44,51 +39,22 @@ $(document).ready(function() {
 ////////////////////////////////////////////////////////////////////////
 
 
-  $('.answer-container').on("click", '#new_answer', function(e){
+  $('.answer-container').on('submit', 'form', function(e){
     e.preventDefault();
-    var answer = $("#answer").val();
-    console.log(answer);
-
-    var template = "<div class='answer-container'><div id='answers'>" +
-    "<div id='user_answer'>" + answer + "</div>" +
-    "<div id='all-answer-comments'></div><div id='answer-comment-button'></div></div>"
+    alert('hello');
 
     $.ajax({
       url: $(this).attr('action'),
       method: $(this).attr('method'),
       data: $(this).serialize()
     })
-    .done(function(response){
-      $('#answers').prepend(template)})
-    .fail(function(){
-      alert("failed");
-    })
+      .done(function(response){
+        $('#answers div').remove();
+        $.each(response, function(i, answer) {
+        $('#answers').append("<div id ='post-answer'>" + answer.content + "</div>")
+        });
+      });
     });
   });
-  //  $("#bigcontainer").append("<h3>Testing</h3>")
-  // $("#bigcontainer").on("submit", function(e){
-  //   e.preventDefault();
-  //   var that = $('#new-comment')
-  //   console.log(that)
-  //   var buttonType = $('input').attr("value")
-  //   if(buttonType == "Add Answer"){
-  //     console.log("found button")
-  //   }
-  //   else{
-  //   }
-  // });
-
-
-//   $('input[value="Add Answer"]').on("click", function(e){
-//     e.preventDefault();
-//     var answer = $("#answer").val();
-//     var uri = $(this).closest('form').attr('action');
-//     var ajaxRequest = $.post(url, $(this).serialize());
-//     console.log(ajaxRequest);
-//     $.ajax({
-//       url: uri
-//       type: "POST"
-//       dataType: "json"
-//     })
-//     $("#bigcontainer").append("<h3>Testing</h3>")
+ 
 
