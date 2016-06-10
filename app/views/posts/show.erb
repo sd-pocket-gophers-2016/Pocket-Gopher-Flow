@@ -1,5 +1,5 @@
 <div id="bigcontainer">
-<h1><a href="/posts/<%= @post.id %>"><%= @post.title %></a></h1>
+  <h1><a href="/posts/<%= @post.id %>"><%= @post.title %></a></h1>
 
   <div class='post-container'>
 
@@ -11,27 +11,27 @@
 
     <div id='all-post-comments'>
     </div>
-    
+
     <div id='post-comment-button'>
     <input id='new-comment' type='submit' value='Add a Comment'>
     <%= erb :'/comments/_new', locals: { action: "/posts/#{@post.id}/comments" } %>
     </div>
-  
+
   </div>
 
   <div class='answer-container'>
-	<div id="answer">
-	  <%= erb :'answers/_new', locals: { action: "/posts/#{@post.id}/answers" }%>
-	</div>
-	
-	<div id='all-answer-comments'>
-	</div>
+  <div id='answers'>
+    <div id='all-answer-comments'>
+    </div>
+   <div id='answer-comment-button'>
+   </div>
+  </div>
 
-	<div id='answer-comment-button'>
-	</div>
 
-</div>
-
+   <div id="answer_form">
+     <%= erb :'answers/_new', locals: { action: "/posts/#{@post.id}/answers" }%>
+   </div>
+  </div>
 </div>
 
 

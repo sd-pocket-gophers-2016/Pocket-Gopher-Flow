@@ -8,7 +8,7 @@ get '/posts' do
 end
 
 get '/posts/new' do
-  if !@current_user
+  if current_user
     @post = Post.new
     @current_id = session[:id]
     erb :'/posts/new'
@@ -18,7 +18,7 @@ get '/posts/new' do
 end
 
 post '/posts/new' do
-  @current_user
+  current_user
   Post.create(user_id: session[:id], title: params[:title], content: params[:content])
   redirect '/posts'
 end
@@ -33,17 +33,13 @@ post '/posts/:id/answers' do
   post = Post.find(params[:id])
 
   answer = Answer.create(content: params[:content], user_id: current_user.id, post_id: post.id)
-
-  #needs comment, user_id, post_id
-  # if request.xhr?
-  #   content_type :json
-  #   {user_id: , post_id: , content: answer, }
-  redirect '/posts/1'
-
-  # answer = Answer.create(params[:id], user_id: session[:id], )
-  # if request.xhr?
-  #   content_type :json
-  #   {user_id: , post_id: , content: answer, }
+  puts answer.to_json
+  if request.xhr?
+    content_type :json
+    answer.to_json
+  else
+    redirect "/posts/#{params[:id]}"
+  end
 
 end
 

@@ -17,36 +17,42 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
   <script src="/js/application.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title></title>
 </head>
 <body>
-<div class="container">
-<nav>
-  <ul class="nav nav-pills">
 
-    <% if logged_in? %>
-      <form method="GET" action="/users/logout">
-      <input type="submit" value="Logout">
-      </form>
-   <% else %>
-      <form method = "GET" action = "/users/new">
-        <input type = "submit" value = "Sign-Up">
-      </form>
-       <form method = "GET" action = "/users/login">
-        <input class="active" type="submit" value="Login">
-      </form>
-    <% end %>
+  <div class="jumbotron">
+        <% if logged_in? %>
+          <form method="GET" action="/users/logout">
+          <input class="top-users" type="submit" value="Logout">
+          </form>
+        <% else %>
+          <form method = "GET" action = "/users/new">
+            <input class="top-users" type = "submit" value = "Sign-Up">
+          </form>
+           <form method = "GET" action = "/users/login">
+            <input class="top-users" type="submit" value="Login">
+          </form>
+        <% end %>
+  </div>
+  <div class="container-fluid">
 
-    <li class="active"><a href="/posts">Question</a></li>
-    <li class="active"><a href="">Jobs</a></li>
-    <li class="active"><a href="/posts">Tag</a></li>
-    <li class="active"><a href="/users/:id">User</a></li>
-    <li class="active"><a href="">Badges</a></li>
-    <li class="active"><a href="/posts/new">Ask Question</a></li>
-  </ul>
-  </nav>
-  <%= yield %>
+  <nav>
+    <ul class="nav nav-pills">
+
+
+
+      <li class="active"><a href="/posts">Question</a></li>
+      <li class="active"><a href="">Jobs</a></li>
+      <li class="active"><a href="/posts">Tag</a></li>
+      <li class="active"><a href="/users/:id">User</a></li>
+      <li class="active"><a href="">Badges</a></li>
+      <li class="active"><a href="/posts/new">Ask Question</a></li>
+    </ul>
+    </nav>
+    <%= yield %>
 </div>
 </body>
 </html>
