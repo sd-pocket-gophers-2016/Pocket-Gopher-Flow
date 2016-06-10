@@ -4,7 +4,11 @@ users = [
   {username: "Pumbaa", email:"pumbaa@lionking.com", password: "123"},
   {username: "Shiba Inu", email: "suchwow@gmail.com", password: "suchwow"},
   {username: "Taylor Twoteeth", email: "iamtaylor@twoteeth.com", password: "white" },
-  {username: "Richie N.W.A. Yi", email: "richie@yi.com", password: "123"}
+  {username: "Richie N.W.A. Yi", email: "richie@yi.com", password: "123"},
+  {username: "Maeve", email: "maeve@dbc.com", password: "123"},
+  {username: "Kevin", email: "kevin@dbc.com", password: "123"},
+  {username: "Mike Doom", email: "mike@doom.com", password: "123"},
+  {username: "Mark", email: "mark@dbc.com", password: "123"}
 ]
 
 posts = [
@@ -15,6 +19,10 @@ posts = [
   {title: "Lunch time", content: "I'm boycotting Miguel's", user_id: 5},
   {title: "...", content: "Hakuna Matata?", user_id: 1},
   {title: "i <3 Thursdays~", content: "I find Nirvana when doing yoga with Gia", user_id: 6},
+  {title: "word", content: "word", user_id: 7},
+  {title: "alright pocket gophers", content: "let's get to it", user_id: 8},
+  {title: "GET BIG", content: "I like to look at myself in the mirror making poses", user_id: 9},
+  {title: "alright", content: "good deal", user_id: 9}
 ]
 
 
